@@ -49,7 +49,7 @@ In this article, the following notation convention is adopted:
 $W=\begin{pmatrix} X & Z \\ Z & Y \end{pmatrix}$ is the symmetric random
 matrix to be considered. Its distribution is given by Equation \eqref{eq:distr}.
 $\abs{W}=XY-Z^2$ is the determinant of matrix $W$.
-Let $\E_{\alpha,\beta}[f(X,Y, Z)]$ denotes the expectation
+Let $\E_{\alpha,\beta}[f(X,Y, Z)] = \int f(X,Y,Z)p(W)dW$ denotes the expectation
 with $\Beta_2(\alpha, \beta)$ where $f(X, Y, Z)$ is a function with three
 variables. We will compute $\E_{\alpha,\beta}[f(X,Y, Z)]$
 when $f(X,Y,Z)$ takes the monomial form: $f(X,Y,Z)=X^m Y^r Z^{2t}$.
@@ -62,10 +62,30 @@ To accomplish this goal, we need the following lemma:
 Let $A = XY - Z^2, B = 1 - X - Y + A$, then we have
 \begin{align}
 \E_{\alpha, \beta}[Af(X,Y,Z)] =&
-\frac{\alpha(\alpha-1/2)}{(\alpha+\beta)(\alpha+\beta-1/2)}\E_{\alpha+1, \beta}[f(X,Y,Z)] \\
-\E_{\alpha,\beta}[Bf(X,Y,Z)] =& \frac{\beta(\beta-1/2)}{(\alpha+\beta)(\alpha+\beta-1/2)}\E_{\alpha, \beta+1}[f(X,Y,Z)]
+\frac{\alpha(\alpha-1/2)}{(\alpha+\beta)(\alpha+\beta-1/2)}\E_{\alpha+1, \beta}[f(X,Y,Z)]
+\label{eq:Aexp} \\
+\E_{\alpha,\beta}[Bf(X,Y,Z)] =&
+\frac{\beta(\beta-1/2)}{(\alpha+\beta)(\alpha+\beta-1/2)}\E_{\alpha, \beta+1}[f(X,Y,Z)]
+\label{eq:Bexp}
 \end{align}
 \end{lemma}
+\begin{proof}
+For multivariant Beta function we have
+$\Beta_p(a, b) = \frac{\Gamma_p(a)\Gamma_p(b)}{\Gamma_p(a+b)}$
+where $\Gamma_p$ is the multivariant Gamma function.
+For $p=2$ we have $\Gamma_2(a) = \sqrt{\pi}\Gamma(a)\Gamma(a-1/2)$.
+\begin{align*}
+\frac{\E_{\alpha, \beta}[Af(X,Y,Z)]}{\E_{\alpha+1, \beta}[Af(X,Y,Z)]} &=\frac{B_2(\alpha+1,\beta)}{B_2(\alpha,\beta)}\\
+&=\frac{\Gamma_2(\alpha+1)}{\Gamma_2(\alpha)}
+\frac{\Gamma_2(\alpha+\beta)}{\Gamma_2(\alpha+\beta+1)}\\
+& =\frac{\Gamma(\alpha+1)}{\Gamma(\alpha)}
+\frac{\Gamma(\alpha+1/2)}{\Gamma(\alpha-1/2)}
+\frac{\Gamma(\alpha+\beta)}{\Gamma(\alpha+\beta+1)}
+\frac{\Gamma(\alpha+\beta-1/2)}{\Gamma(\alpha+\beta+1/2)}\\
+&=\frac{\alpha(\alpha-1/2)}{(\alpha+\beta)(\alpha+\beta-1/2)}
+\end{align*}
+Thus Equation \eqref{eq:Aexp} is proved and Equation \eqref{eq:Bexp} follows similarly.
+\end{proof}
 \bibliographystyle{elsarticle-harv}
 \bibliography{exportlist}
 \end{document}
