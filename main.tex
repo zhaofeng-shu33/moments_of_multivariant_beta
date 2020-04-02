@@ -1,17 +1,24 @@
-\documentclass{article}
+\documentclass{elsarticle}
 \usepackage{amssymb}
 \usepackage{amsmath}
 \usepackage{amsthm}
 \usepackage{mathtools}
-\usepackage{hyperref}
 \DeclarePairedDelimiter\abs{\lvert}{\rvert}
 \def\Beta{\textrm{Beta}}
-\title{Two order matrix extension of Beta distribution}
+\title{Second-order matrix extension of Beta Distribution}
+\author{Feng Zhao}
 \begin{document}
+ \begin{abstract}
 In this article, we consider a two order matrix extension of Beta distribution,
 that is, a distribution on two order random definite matrix.
-
-Olkin introduces an extension of multivariate extension for Beta distribution,
+ \end{abstract}
+\begin{keyword}
+ multivariate Beta distribution \sep higher order moment
+\end{keyword}
+\maketitle
+\section{Introduction}
+\citet{olkin1964} introduce an extension of
+multivariate extension for Beta distribution,
 denoted as $\Beta_p(\alpha, \beta)$.
 It is a distribution for $p\times p$ random matrix $X$:
 \begin{align}
@@ -32,4 +39,10 @@ far as we know, is novel and can be used directly in the computation
 related with multivariate Beta models instead of approximate
 numerical integration.
 
+In this article, the following notation convention is adopted:
+$X=\begin{pmatrix} x & z \\ z & y \end{pmatrix}$ is the 
+\section{Marginal Distribution}
+In this section we will show that 
+\bibliographystyle{elsarticle-harv}
+\bibliography{exportlist}
 \end{document}
