@@ -4,7 +4,9 @@
 \usepackage{amsthm}
 \usepackage{mathtools}
 \DeclarePairedDelimiter\abs{\lvert}{\rvert}
+\def\E{\mathbb{E}}
 \def\Beta{\textrm{Beta}}
+\newtheorem{lemma}{Lemma}
 \title{Second-order matrix extension of Beta Distribution}
 \author{Feng Zhao}
 \begin{document}
@@ -20,16 +22,20 @@ that is, a distribution on two order random definite matrix.
 \citet{olkin1964} introduce an extension of
 multivariate extension for Beta distribution,
 denoted as $\Beta_p(\alpha, \beta)$.
-It is a distribution for $p\times p$ random matrix $X$:
+It is a random $p\times p$  symmetric matrix $W$ whose distribution
+is given by
 \begin{align}
-p(X) &= \frac{1}{B_p(\alpha, \beta)}\abs{I-X}^{\alpha-\frac{p+1}{2}}
-\abs{X}^{\beta-\frac{p+1}{2}} \textrm{ where } X, I-X \in S^{++} \\
-B_p(\alpha, \beta) &= \int_{X \in S_{p,p}^{+} }\abs{I-X}^{\alpha-\frac{p+1}{2}}
-\abs{X}^{\beta-\frac{p+1}{2}}dX
+p(W) &= \frac{1}{B_p(\alpha, \beta)}\abs{I-W}^{\alpha-\frac{p+1}{2}}
+\abs{W}^{\beta-\frac{p+1}{2}} \textrm{ where } W, I-W \in S_{p,p}^{++}
+\label{eq:distr}\\
+B_p(\alpha, \beta) &= \int_{W,I-W \in S_{p,p}^{+} }\abs{I-W}^{\alpha-\frac{p+1}{2}}
+\abs{X}^{\beta-\frac{p+1}{2}}dX \textrm{ where } \alpha, \beta > \frac{p-1}{2}
 \end{align}
-The $B_p(\alpha, \beta)$ is called multivariate Beta function.
+$B_p(\alpha, \beta)$ is called the multivariate Beta function (\citet{david1981}).
 When $p=1$, the distribution reduces to normal Beta distribution for
-$0<x<1$. This extension has many useful applications in multivariate statistical
+$0<x<1$.
+
+This extension has many useful applications in multivariate statistical
 problems but little is known about the analytical property of such extension.
 In this paper, we focus on the case $p=2$ and deduce the analytical form of 
 higher order moments for $\Beta_2(\alpha, \beta)$. This formula
@@ -40,9 +46,26 @@ related with multivariate Beta models instead of approximate
 numerical integration.
 
 In this article, the following notation convention is adopted:
-$X=\begin{pmatrix} x & z \\ z & y \end{pmatrix}$ is the 
+$W=\begin{pmatrix} X & Z \\ Z & Y \end{pmatrix}$ is the symmetric random
+matrix to be considered. Its distribution is given by Equation \eqref{eq:distr}.
+$\abs{W}=XY-Z^2$ is the determinant of matrix $W$.
+Let $\E_{\alpha,\beta}[f(X,Y, Z)]$ denotes the expectation
+with $\Beta_2(\alpha, \beta)$ where $f(X, Y, Z)$ is a function with three
+variables. We will compute $\E_{\alpha,\beta}[f(X,Y, Z)]$
+when $f(X,Y,Z)$ takes the monomial form: $f(X,Y,Z)=X^m Y^r Z^{2t}$.
+
 \section{Marginal Distribution}
-In this section we will show that 
+In this section we will compute $\E_{\alpha,\beta}[f(X,Y, Z)]$
+for $f(X,Y,Z)=X^m$. That is, we consider the marginal distribution for $X$.
+To accomplish this goal, we need the following lemma:
+\begin{lemma}
+Let $A = XY - Z^2, B = 1 - X - Y + A$, then we have
+\begin{align}
+\E_{\alpha, \beta}[Af(X,Y,Z)] =&
+\frac{\alpha(\alpha-1/2)}{(\alpha+\beta)(\alpha+\beta-1/2)}\E_{\alpha+1, \beta}[f(X,Y,Z)] \\
+\E_{\alpha,\beta}[Bf(X,Y,Z)] =& \frac{\beta(\beta-1/2)}{(\alpha+\beta)(\alpha+\beta-1/2)}\E_{\alpha, \beta+1}[f(X,Y,Z)]
+\end{align}
+\end{lemma}
 \bibliographystyle{elsarticle-harv}
 \bibliography{exportlist}
 \end{document}
