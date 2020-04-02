@@ -1,5 +1,35 @@
 \documentclass{article}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{mathtools}
+\usepackage{hyperref}
+\DeclarePairedDelimiter\abs{\lvert}{\rvert}
+\def\Beta{\textrm{Beta}}
 \title{Two order matrix extension of Beta distribution}
 \begin{document}
+In this article, we consider a two order matrix extension of Beta distribution,
+that is, a distribution on two order random definite matrix.
+
+Olkin introduces an extension of multivariate extension for Beta distribution,
+denoted as $\Beta_p(\alpha, \beta)$.
+It is a distribution for $p\times p$ random matrix $X$:
+\begin{align}
+p(X) &= \frac{1}{B_p(\alpha, \beta)}\abs{I-X}^{\alpha-\frac{p+1}{2}}
+\abs{X}^{\beta-\frac{p+1}{2}} \textrm{ where } X, I-X \in S^{++} \\
+B_p(\alpha, \beta) &= \int_{X \in S_{p,p}^{+} }\abs{I-X}^{\alpha-\frac{p+1}{2}}
+\abs{X}^{\beta-\frac{p+1}{2}}dX
+\end{align}
+The $B_p(\alpha, \beta)$ is called multivariate Beta function.
+When $p=1$, the distribution reduces to normal Beta distribution for
+$0<x<1$. This extension has many useful applications in multivariate statistical
+problems but little is known about the analytical property of such extension.
+In this paper, we focus on the case $p=2$ and deduce the analytical form of 
+higher order moments for $\Beta_2(\alpha, \beta)$. This formula
+includes the expectation and variance, which are the first and second
+order moment respectively. The higher order moment formula, as
+far as we know, is novel and can be used directly in the computation
+related with multivariate Beta models instead of approximate
+numerical integration.
 
 \end{document}
