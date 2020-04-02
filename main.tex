@@ -7,6 +7,7 @@
 \def\E{\mathbb{E}}
 \def\Beta{\textrm{Beta}}
 \newtheorem{lemma}{Lemma}
+\newtheorem{theorem}{Theorem}
 \title{Second-order matrix extension of Beta Distribution}
 \author{Feng Zhao}
 \begin{document}
@@ -56,9 +57,10 @@ when $f(X,Y,Z)$ takes the monomial form: $f(X,Y,Z)=X^m Y^r Z^{2t}$.
 
 \section{Marginal Distribution}
 In this section we will compute $\E_{\alpha,\beta}[f(X,Y, Z)]$
-for $f(X,Y,Z)=X^m$. That is, we consider the marginal distribution for $X$.
+for $f(X,Y,Z)=X^m$. That is, we consider the marginal distribution for $X$,
+which turns out to be one dimensional Beta distribution.
 To accomplish this goal, we need the following lemma:
-\begin{lemma}
+\begin{lemma}\label{lem:AB}
 Let $A = XY - Z^2, B = 1 - X - Y + A$, then we have
 \begin{align}
 \E_{\alpha, \beta}[Af(X,Y,Z)] =&
@@ -75,7 +77,8 @@ $\Beta_p(a, b) = \frac{\Gamma_p(a)\Gamma_p(b)}{\Gamma_p(a+b)}$
 where $\Gamma_p$ is the multivariant Gamma function.
 For $p=2$ we have $\Gamma_2(a) = \sqrt{\pi}\Gamma(a)\Gamma(a-1/2)$.
 \begin{align*}
-\frac{\E_{\alpha, \beta}[Af(X,Y,Z)]}{\E_{\alpha+1, \beta}[Af(X,Y,Z)]} &=\frac{B_2(\alpha+1,\beta)}{B_2(\alpha,\beta)}\\
+\frac{\E_{\alpha, \beta}[Af(X,Y,Z)]}{\E_{\alpha+1, \beta}[Af(X,Y,Z)]} &
+=\frac{B_2(\alpha+1,\beta)}{B_2(\alpha,\beta)}\\
 &=\frac{\Gamma_2(\alpha+1)}{\Gamma_2(\alpha)}
 \frac{\Gamma_2(\alpha+\beta)}{\Gamma_2(\alpha+\beta+1)}\\
 & =\frac{\Gamma(\alpha+1)}{\Gamma(\alpha)}
@@ -85,6 +88,34 @@ For $p=2$ we have $\Gamma_2(a) = \sqrt{\pi}\Gamma(a)\Gamma(a-1/2)$.
 &=\frac{\alpha(\alpha-1/2)}{(\alpha+\beta)(\alpha+\beta-1/2)}
 \end{align*}
 Thus Equation \eqref{eq:Aexp} is proved and Equation \eqref{eq:Bexp} follows similarly.
+\end{proof}
+Using the above Lemma, we give the main conclusion of this section:
+\begin{theorem}
+$\E_{\alpha, \beta}[X^m] =
+\prod_{i=0}^{m-1}\frac{\alpha+i}{\alpha+\beta+i}$, thus $X$
+conforms to Beta distribution $\Beta(\alpha, \beta)$
+\end{theorem}
+\begin{proof}
+Since the position of $X$ and $Y$ is symmetric,
+$\E_{\alpha, \beta}[X]=\E_{\alpha, \beta}[Y]$.
+Taking the expectation about $\Beta_2(\alpha, \beta)$
+on both sides of $B=1-X-Y+A$ and using the
+conclusion of Lemma \ref{lem:AB} we have
+\begin{equation*}
+\frac{\beta(\beta-1/2)}{(\alpha+\beta)(\alpha+\beta-1/2)}
+= 1 - 2\E_{\alpha, \beta}[X] +
+\frac{\alpha(\alpha-1/2)}{(\alpha+\beta)(\alpha+\beta-1/2)}
+\end{equation*}
+Solving the about equation we get
+$\E_{\alpha, \beta}[X]=\frac{\alpha}{\alpha + \beta}$.
+Recursively using Equation \eqref{eq:Aexp} with $f(X,Y,Z)=X$
+we have $\E_{\alpha, \beta}[X^m] =
+\prod_{i=0}^{m-1}\frac{\alpha+i}{\alpha+\beta+i}$.
+This expression of higher order moment
+is the same with that of Beta distribution and by
+the uniqueness of moment generating function, we
+conclude that $X$ is actually Beta distribution $B(\alpha,
+\beta)$.
 \end{proof}
 \bibliographystyle{elsarticle-harv}
 \bibliography{exportlist}
