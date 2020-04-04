@@ -90,7 +90,7 @@ For $p=2$ we have $\Gamma_2(a) = \sqrt{\pi}\Gamma(a)\Gamma(a-1/2)$.
 Thus Equation \eqref{eq:Aexp} is proved and Equation \eqref{eq:Bexp} follows similarly.
 \end{proof}
 Using the above Lemma, we give the main conclusion of this section:
-\begin{theorem}
+\begin{theorem}\label{thm:Xm}
 $\E_{\alpha, \beta}[X^m] =
 \prod_{i=0}^{m-1}\frac{\alpha+i}{\alpha+\beta+i}$, thus $X$
 conforms to Beta distribution $\Beta(\alpha, \beta)$
@@ -116,6 +116,52 @@ is the same with that of Beta distribution and by
 the uniqueness of moment generating function, we
 conclude that $X$ is actually Beta distribution $B(\alpha,
 \beta)$.
+\end{proof}
+\section{Mixed Moment}
+In this section, we further compute $\E_{\alpha,\beta}[X^mZ^{2t}]$.
+By symmetric property  $\E_{\alpha,\beta}[X^mZ^{2t+1}] = 0$.
+Therefore we only need to consider the case when the power of $Z$
+is even.
+\begin{theorem}
+\begin{equation}\label{eq:ZXtm}
+\E_{\alpha, \beta}[X^mZ^{2t}] = (2t-1)!!
+\prod_{i=0}^{t-1}
+\frac{\beta+i}{(\alpha+\beta+i-1/2)}
+\frac{\prod_{i=0}^{t+m-1}\alpha+i}{\prod_{i=0}^{2t+m-1}
+\alpha+\beta+i}
+\end{equation}
+\end{theorem}
+\begin{proof}
+We use induction to show Equation \eqref{eq:ZXtm} is true.
+Firstly, Equation \eqref{eq:ZXtm} is true for $t=0$ from 
+Theorem \ref{thm:Xm}. Let $A, B$ be the same as those
+in Lemma \ref{lem:AB}.
+Suppose Equation \eqref{eq:ZXtm} holds for $\E[Z^{2t-2}X^m]$,
+using $Z^2=XY-A=X(1-X-A+B)-A$, then
+\begin{align*}
+\E_{\alpha,\beta}[Z^{2t}X^m] &=
+\E_{\alpha,\beta}[Z^{2t-2}X^m(X-X^2+AX-BX-A)] \\
+&= \E_{\alpha,\beta}[Z^{2t-2}(X^{m+1} - X^{m+2})] +
+\E_{\alpha,\beta}[A Z^{2t-2} (X^{m+1} - X^m)] -
+\E_{\alpha,\beta}[BZ^{2t-2} X^{m+1}] \\
+&= \left(1-\frac{\alpha+(t+m)}{\alpha+\beta+(2t+m-1)}
+\right)\E[Z^{2t-2}X^{m+1}] \\
+&+
+\frac{\alpha(\alpha-1/2)}{(\alpha+\beta)(\alpha+\beta-1/2)}
+\E_{\alpha+1,\beta}[Z^{2t-2}(X^{m+1} - X^m)] \\
+&-\frac{\beta(\beta-1/2)}{(\alpha+\beta)(\alpha+\beta-1/2)}
+\E_{\alpha,\beta+1}[Z^{2t-2}X^{m+1}]\\
+&=\frac{n-k+2(t-1)}{n+2(2t+m-1)}\E[Z^{2t-2}X^{m+1}] -
+\frac{k(k-1)}{n(n-1)}\left(1-\frac{k+2(t+m)}{n+2(2t-1+m)}\right)
+\E[Z^{2t-2}X^m] \\
+&-\frac{(n-k)(n-k-1)}{n(n-1)}\E_{n+2,k}[Z^{2t-2}X^{m+1}]\\
+&=\frac{n-k+2(t-1)}{n+2(2t+m-1)}
+\left(1-\frac{k-1}{n+1+2(t-2)}\right)\E[Z^{2t-2}X^{m+1}] \\
+&-\frac{(n-k-1)(n-k+2(t-1))}{(n+2(t-1))(n+2(2t-1+m)}\E[Z^{2t-2}X^{m+1}] \\
+&=\frac{(2t-1)(n-k+2(t-1))}{(n+2(t-1)) (n+2(2t-1+m))}\E[Z^{2t-2}X^{m+1}]
+\end{align*}
+Using Equation \eqref{eq:XZm2} for $t-1$
+we can get the same form of expression for $t$.
 \end{proof}
 \bibliographystyle{elsarticle-harv}
 \bibliography{exportlist}
