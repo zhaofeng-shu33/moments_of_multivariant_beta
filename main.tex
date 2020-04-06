@@ -144,17 +144,20 @@ using $Z^2=XY-A=X(1-X-A+B)-A$, then
 &= \E_{\alpha,\beta}[Z^{2t-2}(X^{m+1} - X^{m+2})] +
 \E_{\alpha,\beta}[A Z^{2t-2} (X^{m+1} - X^m)] -
 \E_{\alpha,\beta}[BZ^{2t-2} X^{m+1}] \\
-&= \left(1-\frac{\alpha+(t+m)}{\alpha+\beta+(2t+m-1)}
-\right)\E[Z^{2t-2}X^{m+1}] \\
+&= \left(1-\frac{\alpha+t+m}{\alpha+\beta+2t+m-1}
+\right)\E_{\alpha, \beta}[Z^{2t-2}X^{m+1}] \\
 &+
 \frac{\alpha(\alpha-1/2)}{(\alpha+\beta)(\alpha+\beta-1/2)}
 \E_{\alpha+1,\beta}[Z^{2t-2}(X^{m+1} - X^m)] \\
 &-\frac{\beta(\beta-1/2)}{(\alpha+\beta)(\alpha+\beta-1/2)}
 \E_{\alpha,\beta+1}[Z^{2t-2}X^{m+1}]\\
-&=\frac{n-k+2(t-1)}{n+2(2t+m-1)}\E[Z^{2t-2}X^{m+1}] -
-\frac{k(k-1)}{n(n-1)}\left(1-\frac{k+2(t+m)}{n+2(2t-1+m)}\right)
-\E[Z^{2t-2}X^m] \\
-&-\frac{(n-k)(n-k-1)}{n(n-1)}\E_{n+2,k}[Z^{2t-2}X^{m+1}]\\
+&=\frac{\beta+t-1}{\alpha+\beta + 2t+m-1}
+\E_{\alpha,\beta}[Z^{2t-2}X^{m+1}] \\
+&+\frac{(\alpha+t+m)(\alpha-1/2)}{(\alpha+\beta+2t-1+m)(\alpha+\beta + t - 3/2)}
+\left(1-\frac{\alpha+\beta+2(t-1)+m}{\alpha+t-1}\right)
+\E_{\alpha, \beta}[Z^{2t-2}X^{m+1}] \\
+&-\frac{(\beta+t-1)(\beta-1/2)}{(\alpha+\beta+2t-1+m)(\alpha+\beta + t - 3/2)}
+\E_{\alpha,\beta}[Z^{2t-2}X^{m+1}]\\
 &=\frac{n-k+2(t-1)}{n+2(2t+m-1)}
 \left(1-\frac{k-1}{n+1+2(t-2)}\right)\E[Z^{2t-2}X^{m+1}] \\
 &-\frac{(n-k-1)(n-k+2(t-1))}{(n+2(t-1))(n+2(2t-1+m)}\E[Z^{2t-2}X^{m+1}] \\
