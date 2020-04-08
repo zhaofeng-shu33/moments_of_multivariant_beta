@@ -8,6 +8,7 @@
 \def\Beta{\textrm{Beta}}
 \newtheorem{lemma}{Lemma}
 \newtheorem{theorem}{Theorem}
+\newtheorem{cor}{Corollary}
 \title{Second-order matrix extension of Beta Distribution}
 \author{Feng Zhao}
 \begin{document}
@@ -122,7 +123,7 @@ In this section, we further compute $\E_{\alpha,\beta}[X^mZ^{2t}]$.
 By symmetric property  $\E_{\alpha,\beta}[X^mZ^{2t+1}] = 0$.
 Therefore we only need to consider the case when the power of $Z$
 is even.
-\begin{theorem}
+\begin{theorem}\label{thm:mm}
 \begin{equation}\label{eq:ZXtm}
 \E_{\alpha, \beta}[X^mZ^{2t}] = \frac{(2t-1)!!}{2^t}
 \prod_{i=0}^{t-1}
@@ -164,6 +165,20 @@ using $Z^2=XY-A=X(1-X-A+B)-A$, then
 Using Equation \eqref{eq:ZXtm} for $t-1$
 we can get the same form of expression for $t$.
 \end{proof}
+From Theorem \ref{thm:mm},
+using $X^m Y^r Z^{2t} = X^m(A+Z^2)^r Z^{2t} $ and
+binomial theorem we can get
+the general formula for the mixed moment:
+\begin{cor}
+\begin{align}
+\E_{\alpha, \beta}[X^mY^rZ^{2t}] &= \frac{(2t-1)!!}{2^t}
+\frac{\prod_{j=0}^{t-1} (\beta+j)}{\prod_{j=0}^{t+r-1} (\alpha+\beta-1/2+j)}
+\frac{\prod_{j=0}^{t+m-1}(\alpha+j)}{\prod_{j=0}^{2t+m-1} (\alpha+\beta+j)}\notag\\
+&\cdot\sum_{i=0}^r \frac{1}{2^i}\binom{r}{i}\prod_{j=1}^i (2t-1+2j)
+\frac{\displaystyle\prod_{j=0}^{r-i-1}(\alpha-1/2+j)
+\prod_{j=0}^{i-1}(\beta+j+t)}{\prod_{j=0}^{i-1}(\alpha+\beta+j+2t+m)}
+\end{align}
+\end{cor}
 \bibliographystyle{elsarticle-harv}
 \bibliography{exportlist}
 \end{document}
