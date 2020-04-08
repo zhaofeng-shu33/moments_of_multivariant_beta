@@ -124,7 +124,7 @@ Therefore we only need to consider the case when the power of $Z$
 is even.
 \begin{theorem}
 \begin{equation}\label{eq:ZXtm}
-\E_{\alpha, \beta}[X^mZ^{2t}] = (2t-1)!!
+\E_{\alpha, \beta}[X^mZ^{2t}] = \frac{(2t-1)!!}{2^t}
 \prod_{i=0}^{t-1}
 \frac{\beta+i}{(\alpha+\beta+i-1/2)}
 \frac{\prod_{i=0}^{t+m-1}\alpha+i}{\prod_{i=0}^{2t+m-1}
@@ -154,16 +154,14 @@ using $Z^2=XY-A=X(1-X-A+B)-A$, then
 &=\frac{\beta+t-1}{\alpha+\beta + 2t+m-1}
 \E_{\alpha,\beta}[Z^{2t-2}X^{m+1}] \\
 &+\frac{(\alpha+t+m)(\alpha-1/2)}{(\alpha+\beta+2t-1+m)(\alpha+\beta + t - 3/2)}
-\left(1-\frac{\alpha+\beta+2(t-1)+m}{\alpha+t-1}\right)
+\left(1-\frac{\alpha+\beta+2(t-1)+m+1}{\alpha+t+m}\right)
 \E_{\alpha, \beta}[Z^{2t-2}X^{m+1}] \\
 &-\frac{(\beta+t-1)(\beta-1/2)}{(\alpha+\beta+2t-1+m)(\alpha+\beta + t - 3/2)}
 \E_{\alpha,\beta}[Z^{2t-2}X^{m+1}]\\
-&=\frac{n-k+2(t-1)}{n+2(2t+m-1)}
-\left(1-\frac{k-1}{n+1+2(t-2)}\right)\E[Z^{2t-2}X^{m+1}] \\
-&-\frac{(n-k-1)(n-k+2(t-1))}{(n+2(t-1))(n+2(2t-1+m)}\E[Z^{2t-2}X^{m+1}] \\
-&=\frac{(2t-1)(n-k+2(t-1))}{(n+2(t-1)) (n+2(2t-1+m))}\E[Z^{2t-2}X^{m+1}]
+&=\frac{(t-1/2)(\beta+t-1)}{(\alpha+\beta+t-3/2)(\alpha+\beta+2t+m-1)}
+\E_{\alpha, \beta}[Z^{2t-2}X^{m+1}]
 \end{align*}
-Using Equation \eqref{eq:XZm2} for $t-1$
+Using Equation \eqref{eq:ZXtm} for $t-1$
 we can get the same form of expression for $t$.
 \end{proof}
 \bibliographystyle{elsarticle-harv}
