@@ -18,8 +18,8 @@
 \address[1]{Department of Electronic Engineering, Tsinghua University, Beijing China}
 
  \begin{abstract}
-In this article, we consider a two order matrix extension of Beta distribution,
-that is, a distribution on two order random definite matrix.
+In this article, we consider a second-order matrix extension of Beta distribution.
+That is a distribution on second-order random definite matrix.
 We will give the analytical
 formula for its high order moment, which is superior over general
 numerical integration method.
@@ -29,11 +29,11 @@ numerical integration method.
 \end{keyword}
 \end{frontmatter}
 \section{Introduction}
-\citet{olkin1964} introduce an extension of
+\citet{david1981} introduce an extension of
 multivariate extension for Beta distribution,
-denoted as $\Beta_p(\alpha, \beta)$.
-It is a random $p\times p$  symmetric matrix $W$ whose distribution
-is given by
+denoted as $\mathbf{B}(\alpha, \beta; I_p)$.
+It is a random $p\times p$  symmetric matrix $W$ whose density
+function is given by
 \begin{align}
 p(W) &= \frac{1}{B_p(\alpha, \beta)}\abs{I-W}^{\alpha-\frac{p+1}{2}}
 \abs{W}^{\beta-\frac{p+1}{2}} \textrm{ where } W, I-W \in S_{p,p}^{++}
@@ -41,14 +41,14 @@ p(W) &= \frac{1}{B_p(\alpha, \beta)}\abs{I-W}^{\alpha-\frac{p+1}{2}}
 B_p(\alpha, \beta) &= \int_{W,I-W \in S_{p,p}^{+} }\abs{I-W}^{\alpha-\frac{p+1}{2}}
 \abs{X}^{\beta-\frac{p+1}{2}}dX \textrm{ where } \alpha, \beta > \frac{p-1}{2}
 \end{align}
-$B_p(\alpha, \beta)$ is called the multivariate Beta function (\citet{david1981}).
+$B_p(\alpha, \beta)$ is called the multivariate Beta function (\citet{siegel_1935}).
 When $p=1$, the distribution reduces to normal Beta distribution for
 $0<x<1$.
 
 This extension has many useful applications in multivariate statistical
 problems but little is known about the analytical property of such extension.
 In this paper, we focus on the case $p=2$ and deduce the analytical form of 
-higher order moments for $\Beta_2(\alpha, \beta)$. This formula
+higher order moments for $\mathbf{B}(\alpha, \beta; I_2)$. This formula
 includes the expectation and variance, which are the first and second
 order moment respectively. The higher order moment formula, as
 far as we know, is novel and can be used directly in the computation
@@ -82,8 +82,8 @@ Let $A = XY - Z^2, B = 1 - X - Y + A$, then we have
 \end{lemma}
 \begin{proof}
 For multivariate Beta function we have
-$\Beta_p(a, b) = \frac{\Gamma_p(a)\Gamma_p(b)}{\Gamma_p(a+b)}$
-where $\Gamma_p$ is the multivariate Gamma function.
+$B_p(a, b) = \frac{\Gamma_p(a)\Gamma_p(b)}{\Gamma_p(a+b)}$
+where $\Gamma_p$ is the multivariate Gamma function (\cite{ingham_1933}).
 For $p=2$ we have $\Gamma_2(a) = \sqrt{\pi}\Gamma(a)\Gamma(a-1/2)$.
 \begin{align*}
 \frac{\E_{\alpha, \beta}[Af(X,Y,Z)]}{\E_{\alpha+1, \beta}[Af(X,Y,Z)]} &
