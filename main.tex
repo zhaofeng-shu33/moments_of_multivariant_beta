@@ -176,10 +176,9 @@ Using Equation \eqref{eq:ZXtm} for $t-1$
 we can get the same form of expression for $t$.
 \end{proof}
 From Theorem \ref{thm:mm},
-using $X^m Y^r Z^{2t} = X^m(A+Z^2)^r Z^{2t} $ and
-binomial theorem we can get
-the general formula for the mixed moment:
-\begin{cor}
+we can get
+the general formula for the mixed moment when $m\geq r$:
+\begin{cor}\label{cor:mr}
 \begin{align}
 \E_{\alpha, \beta}[X^mY^rZ^{2t}] &= \frac{(2t-1)!!}{2^t}
 \frac{\prod_{j=0}^{t-1} (\beta+j)}{\prod_{j=0}^{t+r-1} (\alpha+\beta-1/2+j)}
@@ -187,8 +186,29 @@ the general formula for the mixed moment:
 &\cdot\sum_{i=0}^r \frac{1}{2^i}\binom{r}{i}\prod_{j=1}^i (2t-1+2j)
 \frac{\displaystyle\prod_{j=0}^{r-i-1}(\alpha-1/2+j)
 \prod_{j=0}^{i-1}(\beta+j+t)}{\prod_{j=0}^{i-1}(\alpha+\beta+j+2t+m)}
+\label{eq:mrt}
 \end{align}
 \end{cor}
+Since $\E_{\alpha, \beta}[X^mY^rZ^{2t}]=\E_{\alpha, \beta}[X^rY^mZ^{2t}]$, 
+when $m<r$ we can exchange $m$ and $r$ and use Corollary \ref{cor:mr}.
+\begin{proof}
+From Lemma \ref{lem:AB}, we have
+$X^m Y^r Z^{2t} = X^{m-r}(A+Z^2)^r Z^{2t} $.
+Using binomial theorem we have
+$\E_{\alpha, \beta}[X^m Y^r Z^{2t}] = \sum_{i=0}^r \E_{\alpha, \beta}
+[A^{r-i}X^{m-r}Z^{2(t+i)}]$. Then using Equation \ref{eq:Aexp} recursively
+we have 
+\begin{align*}
+\E_{\alpha, \beta}
+[A^{r-i}X^{m-r}Z^{2(t+i)}] =&
+\prod_{j=0}^{r-i-1}\frac{(\alpha+j)(\alpha+j-1/2)}
+{(\alpha+j+\beta)(\alpha+j+\beta-1/2)} \\
+\cdot & \E_{\alpha+r-i, \beta}
+[X^{m-r}Z^{2(t+i)}]
+\end{align*}
+Using Theorem \ref{thm:mm} we can finally get the expression in
+Equation \eqref{eq:mrt}.
+\end{proof}
 \section{Conclusion}
 We derived the formula of high order moment for multivariate Beta distribution
 in second-order matrix case. This result is helpful when corresponding distribution
