@@ -19,7 +19,7 @@
 
  \begin{abstract}
 In this article, we consider a second-order matrix extension of Beta distribution.
-That is a distribution on second-order random definite matrix.
+That is a distribution on second-order random matrix.
 We will give the analytical
 formula for its high order moment, which is superior over general
 numerical integration method.
@@ -60,7 +60,7 @@ $W=\begin{pmatrix} X & Z \\ Z & Y \end{pmatrix}$ is the symmetric random
 matrix to be considered. Its distribution is given by Equation \eqref{eq:distr}.
 $\abs{W}=XY-Z^2$ is the determinant of matrix $W$.
 Let $\E_{\alpha,\beta}[f(X,Y, Z)] = \int f(X,Y,Z)p(W)dW$ denotes the expectation
-with $\Beta_2(\alpha, \beta)$ where $f(X, Y, Z)$ is a function with three
+with $\mathbf{B}(\alpha, \beta;I_2)$ where $f(X, Y, Z)$ is an arbitrary function with three
 variables. We will compute $\E_{\alpha,\beta}[f(X,Y, Z)]$
 when $f(X,Y,Z)$ takes the monomial form: $f(X,Y,Z)=X^m Y^r Z^{2t}$.
 
@@ -127,8 +127,8 @@ conclude that $X$ is actually Beta distribution $B(\alpha,
 \beta)$.
 \end{proof}
 \section{Mixed Moment}
-In this section, we further compute $\E_{\alpha,\beta}[X^mZ^{2t}]$.
-By symmetric property  $\E_{\alpha,\beta}[X^mZ^{2t+1}] = 0$.
+In this section, we further compute $\E_{\alpha,\beta}[X^mY^rZ^{2t}]$.
+By symmetric property  $\E_{\alpha,\beta}[X^mY^rZ^{2t+1}] = 0$.
 Therefore we only need to consider the case when the power of $Z$
 is even.
 \begin{theorem}\label{thm:mm}
@@ -151,7 +151,8 @@ using $Z^2=XY-A=X(1-X-A+B)-A$, then
 \E_{\alpha,\beta}[Z^{2t}X^m] &=
 \E_{\alpha,\beta}[Z^{2t-2}X^m(X-X^2+AX-BX-A)] \\
 &= \E_{\alpha,\beta}[Z^{2t-2}(X^{m+1} - X^{m+2})] +
-\E_{\alpha,\beta}[A Z^{2t-2} (X^{m+1} - X^m)] -
+\E_{\alpha,\beta}[A Z^{2t-2} (X^{m+1} - X^m)] \\
+&-
 \E_{\alpha,\beta}[BZ^{2t-2} X^{m+1}] \\
 &= \left(1-\frac{\alpha+t+m}{\alpha+\beta+2t+m-1}
 \right)\E_{\alpha, \beta}[Z^{2t-2}X^{m+1}] \\
@@ -162,7 +163,8 @@ using $Z^2=XY-A=X(1-X-A+B)-A$, then
 \E_{\alpha,\beta+1}[Z^{2t-2}X^{m+1}]\\
 &=\frac{\beta+t-1}{\alpha+\beta + 2t+m-1}
 \E_{\alpha,\beta}[Z^{2t-2}X^{m+1}] \\
-&+\frac{(\alpha+t+m)(\alpha-1/2)}{(\alpha+\beta+2t-1+m)(\alpha+\beta + t - 3/2)}
+&+\frac{(\alpha+t+m)(\alpha-1/2)}{(\alpha+\beta+2t-1+m)(\alpha+\beta + t - 3/2)}\\
+&\cdot
 \left(1-\frac{\alpha+\beta+2(t-1)+m+1}{\alpha+t+m}\right)
 \E_{\alpha, \beta}[Z^{2t-2}X^{m+1}] \\
 &-\frac{(\beta+t-1)(\beta-1/2)}{(\alpha+\beta+2t-1+m)(\alpha+\beta + t - 3/2)}
@@ -187,6 +189,10 @@ the general formula for the mixed moment:
 \prod_{j=0}^{i-1}(\beta+j+t)}{\prod_{j=0}^{i-1}(\alpha+\beta+j+2t+m)}
 \end{align}
 \end{cor}
+\section{Conclusion}
+We derived the formula of high order moment for multivariate Beta distribution
+in second-order matrix case. This result is helpful when corresponding distribution
+model is used in statistics.
 \section*{References}
 \bibliographystyle{elsarticle-harv}
 \bibliography{exportlist}
