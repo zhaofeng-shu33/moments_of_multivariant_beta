@@ -29,7 +29,7 @@ numerical integration method.
 \end{keyword}
 \end{frontmatter}
 \section{Introduction}
-\citet{david1981} introduce an extension of
+\citet{david1981} introduces an extension of
 multivariate extension for Beta distribution,
 denoted as $\mathbf{B}(\alpha, \beta; I_p)$.
 It is a random $p\times p$  symmetric matrix $W$ whose density
@@ -41,12 +41,16 @@ p(W) &= \frac{1}{B_p(\alpha, \beta)}\abs{I-W}^{\alpha-\frac{p+1}{2}}
 B_p(\alpha, \beta) &= \int_{W,I-W \in S_{p,p}^{+} }\abs{I-W}^{\alpha-\frac{p+1}{2}}
 \abs{X}^{\beta-\frac{p+1}{2}}dX \textrm{ where } \alpha, \beta > \frac{p-1}{2}
 \end{align}
-$B_p(\alpha, \beta)$ is called the multivariate Beta function (\citet{siegel_1935}).
+$B_p(\alpha, \beta)$ is called the multivariate Beta function (\citet{siegel_1935}); 
+$\abs{W}$ is the determinant of matrix $W$ and $S_{p,p}^{++}$ is the 
+collection of positive
+definite matrix.
 When $p=1$, the distribution reduces to normal Beta distribution for
 $0<x<1$.
 
 This extension has many useful applications in multivariate statistical
 problems but little is known about the analytical property of such extension.
+
 In this paper, we focus on the case $p=2$ and deduce the analytical form of 
 higher order moments for $\mathbf{B}(\alpha, \beta; I_2)$. This formula
 includes the expectation and variance, which are the first and second
@@ -58,7 +62,7 @@ numerical integration.
 In this article, the following notation convention is adopted:
 $W=\begin{pmatrix} X & Z \\ Z & Y \end{pmatrix}$ is the symmetric random
 matrix to be considered. Its distribution is given by Equation \eqref{eq:distr}.
-$\abs{W}=XY-Z^2$ is the determinant of matrix $W$.
+$\abs{W}=XY-Z^2$.
 Let $\E_{\alpha,\beta}[f(X,Y, Z)] = \int f(X,Y,Z)p(W)dW$ denotes the expectation
 with $\mathbf{B}(\alpha, \beta;I_2)$ where $f(X, Y, Z)$ is an arbitrary function with three
 variables. We will compute $\E_{\alpha,\beta}[f(X,Y, Z)]$
