@@ -93,7 +93,7 @@ $B_p(a, b) = \frac{\Gamma_p(a)\Gamma_p(b)}{\Gamma_p(a+b)}$
 where $\Gamma_p$ is the multivariate Gamma function (\cite{ingham_1933}).
 For $p=2$ we have $\Gamma_2(a) = \sqrt{\pi}\Gamma(a)\Gamma(a-1/2)$.
 \begin{align*}
-\frac{\E_{\alpha, \beta}[Af(X,Y,Z)]}{\E_{\alpha+1, \beta}[Af(X,Y,Z)]} &
+\frac{\E_{\alpha, \beta}[Af(X,Y,Z)]}{\E_{\alpha+1, \beta}[f(X,Y,Z)]} &
 =\frac{B_2(\alpha+1,\beta)}{B_2(\alpha,\beta)}\\
 &=\frac{\Gamma_2(\alpha+1)}{\Gamma_2(\alpha)}
 \frac{\Gamma_2(\alpha+\beta)}{\Gamma_2(\alpha+\beta+1)}\\
@@ -109,7 +109,7 @@ Using the above Lemma, we give the main conclusion of this section:
 \begin{theorem}\label{thm:Xm}
 $\E_{\alpha, \beta}[X^m] =
 \prod_{i=0}^{m-1}\frac{\alpha+i}{\alpha+\beta+i}$, thus $X$
-conforms to Beta distribution $\Beta(\alpha, \beta)$
+conforms to Beta distribution $\Beta(\alpha, \beta)$.
 \end{theorem}
 \begin{proof}
 Since the position of $X$ and $Y$ is symmetric,
@@ -202,8 +202,8 @@ when $m<r$ we can exchange $m$ and $r$ and use Corollary \ref{cor:mr}.
 From Lemma \ref{lem:AB}, we have
 $X^m Y^r Z^{2t} = X^{m-r}(A+Z^2)^r Z^{2t} $.
 Using binomial theorem we have
-$\E_{\alpha, \beta}[X^m Y^r Z^{2t}] = \sum_{i=0}^r \E_{\alpha, \beta}
-[A^{r-i}X^{m-r}Z^{2(t+i)}]$. Then using Equation \ref{eq:Aexp} recursively
+$\E_{\alpha, \beta}[X^m Y^r Z^{2t}] = \sum_{i=0}^r \binom{r}{i}\E_{\alpha, \beta}
+[A^{r-i}X^{m-r}Z^{2(t+i)}]$. Then using Equation \eqref{eq:Aexp} recursively
 we have 
 \begin{align*}
 \E_{\alpha, \beta}
@@ -217,9 +217,9 @@ Using Theorem \ref{thm:mm} we can finally get the expression in
 Equation \eqref{eq:mrt}.
 \end{proof}
 \section{Conclusion}
-We derived the formula of high order moment for multivariate Beta distribution
-in second-order matrix case. This result is helpful when corresponding distribution
-model is used in statistics.
+We have derived the formula of high order moment for multivariate Beta distribution
+in second-order matrix case. This result is helpful when the computation of moments
+are required in some statistics problem.
 \section*{References}
 \bibliographystyle{elsarticle-harv}
 \bibliography{exportlist}
