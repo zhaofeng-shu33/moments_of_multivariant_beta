@@ -7,7 +7,9 @@
 %\input cchead.sty                                             %         %
 \pagestyle{headings}                                          %         %
 \headheight=10mm\headsep=3mm\topmargin=0mm                    %         %
-
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsthm}
 \usepackage{mathtools}
 \DeclarePairedDelimiter\abs{\lvert}{\rvert}
 \def\E{\mathbb{E}}
@@ -57,15 +59,15 @@
 \\                                                            %         %
 \bf Second-order Matrix Extension of Beta Distribution and its high Order Moments                                         %题目 change to your title %%
 \footnotetext{                                                %         %
-\bf\scriptsize Received date: \rm\scriptsize Jan. 26, 2020.   %投稿日期 %
+\bf\scriptsize Received date: \rm\scriptsize Apr. 26, 2020.   %投稿日期 %
 \hfil\break\indent                                            %         %
 \bf\scriptsize\hspace{1.3mm} Foundation item: \rm\scriptsize  %         %
-The NSF (10671028) of China.                                  %基金 change to your supported foundation %%
+The NSF (61807021) of China.                                  %基金 change to your supported foundation %%
 \hfil\break\indent                                            %         %
 \bf\scriptsize\hspace{2.3mm}{\rm *} {Corresponding author{\rm .}} %         %
 \hfil\break\indent                                            %         %
 \bf\scriptsize\hspace{2.3mm}{E-mail address: \rm\scriptsize   %         %
-Zhouyifeng@jlu.edu.cn (Zhou Y F), Yangsi@jlu.edu.cn (Yang S).}%%电子邮件 change to your and the corresponding author's E-mail address %%
+zhaof17@mails.tsinghua.edu.cn (Zhao Feng), shaolun.huang@sz.tsinghua.edu.cn (Huang Shao-Lun).}%%电子邮件 change to your and the corresponding author's E-mail address %%
 }}
 \date{}
 \author{\abstractsize\sc Zhao Feng$^{1, {\text *}}$,~ %(周一峰)    %所有作者的中文姓名必须填写
@@ -176,108 +178,155 @@ with $\mathbf{B}(\alpha, \beta;I_2)$ where $f(X, Y, Z)$ is an arbitrary function
 variables. We will compute $\E_{\alpha,\beta}[f(X,Y, Z)]$
 when $f(X,Y,Z)$ takes the monomial form: $f(X,Y,Z)=X^m Y^r Z^{2t}$.
 
-\section{Definition, Theorem, Lemma, Remark and Proof} %%2
-
-\begin{definition} \quad %%2.1
-abcd
-\end{definition}
-
-\begin{proposition}{\hspace{-1.5mm}}$^{[3]}$ \quad %%2.1
-abcd
-\end{proposition}
-
-\begin{theorem} \quad %%2.1
-abcd
+\section{Marginal Distribution}
+In this section we will compute $\E_{\alpha,\beta}[f(X,Y, Z)]$
+for $f(X,Y,Z)=X^m$. That is, we consider the marginal distribution for $X$,
+which turns out to be one dimensional Beta distribution.
+To accomplish this goal, we need the following lemma:
+\begin{lemma}\label{lem:AB}
+Let $A = XY - Z^2, B = 1 - X - Y + A$, then we have
+\begin{align}
+\E_{\alpha, \beta}[Af(X,Y,Z)] =&
+\frac{\alpha(\alpha-1/2)}{(\alpha+\beta)(\alpha+\beta-1/2)}\E_{\alpha+1, \beta}[f(X,Y,Z)]
+\label{eq:Aexp} \\
+\E_{\alpha,\beta}[Bf(X,Y,Z)] =&
+\frac{\beta(\beta-1/2)}{(\alpha+\beta)(\alpha+\beta-1/2)}\E_{\alpha, \beta+1}[f(X,Y,Z)]
+\label{eq:Bexp}
+\end{align}
+\end{lemma}
+\begin{proof}
+For multivariate Beta function we have
+$B_p(a, b) = \frac{\Gamma_p(a)\Gamma_p(b)}{\Gamma_p(a+b)}$
+where $\Gamma_p$ is the multivariate Gamma function (\cite{ingham_1933}).
+For $p=2$ we have $\Gamma_2(a) = \sqrt{\pi}\Gamma(a)\Gamma(a-1/2)$.
+\begin{align*}
+\frac{\E_{\alpha, \beta}[Af(X,Y,Z)]}{\E_{\alpha+1, \beta}[f(X,Y,Z)]} &
+=\frac{B_2(\alpha+1,\beta)}{B_2(\alpha,\beta)}\\
+&=\frac{\Gamma_2(\alpha+1)}{\Gamma_2(\alpha)}
+\frac{\Gamma_2(\alpha+\beta)}{\Gamma_2(\alpha+\beta+1)}\\
+& =\frac{\Gamma(\alpha+1)}{\Gamma(\alpha)}
+\frac{\Gamma(\alpha+1/2)}{\Gamma(\alpha-1/2)}
+\frac{\Gamma(\alpha+\beta)}{\Gamma(\alpha+\beta+1)}
+\frac{\Gamma(\alpha+\beta-1/2)}{\Gamma(\alpha+\beta+1/2)}\\
+&=\frac{\alpha(\alpha-1/2)}{(\alpha+\beta)(\alpha+\beta-1/2)}
+\end{align*}
+Thus Equation \eqref{eq:Aexp} is proved and Equation \eqref{eq:Bexp} follows similarly.
+\end{proof}
+Using the above Lemma, we give the main conclusion of this section:
+\begin{theorem}\label{thm:Xm}
+$\E_{\alpha, \beta}[X^m] =
+\prod_{i=0}^{m-1}\frac{\alpha+i}{\alpha+\beta+i}$, thus $X$
+conforms to Beta distribution $\Beta(\alpha, \beta)$.
 \end{theorem}
-
-\noindent{\it Proof.} \quad
-abcd
-
-\begin{remark} \quad %
-{\rm % Remark 用正体
-abcd
-}
-\end{remark}
-
-\section{Photographs and Tables}%%The numbers and denotations in figures MUST be smaller than those in the text. %%
-                                %%图和表中的数字、符号、公式等必须与行文的字体一致，字号应略小于行文             %%
-
-%\begin{figure}[h]
-%\centerline{\psfig{file=cmrf1.eps,width=5cm}}
-%\end{figure}
-\vspace*{-8pt}
-\begin{center}
-{\small {\bf Fig. 3.1} A schematic illustration of dissociative recombination. The
-direct mechanism, 4m$^2_\pi$ is initiated when the
-molecular ion captures an electron with kinetic energy.}
-\end{center}
-Figures are to be inserted in the text nearest their first reference.
-If the author requires the publisher to reduce
-the figures, ensure that the figures (including letterings and
-numbers) are large enough to be clearly seen after reduction. If
-photographs are to be used, only black and white ones are acceptable.
-
-Figures are to be sequentially numbered in Arabic numerals. The
-caption must be placed below the figure.
-
-
-%\begin{center}
-%\epsfig{width=9cm,file=***.eps}                          %% .eps 其他插图格式参考
-%\begin{minipage}{11cm}
-%\begin{center}
-%{\small {\bf Fig. 3.2} Figure's name}
-%\end{center}
-%\end{minipage}
-%\end{center}
-
-%\setlength{\unitlength}{1mm}
-%\begin{center}\begin{picture}(35,50)
-%\put(-12,50){\special{em:graph ***.bmp x=5cm y=5cm}}     %% .bmp 其他插图格式参考
-%\end{picture}
-%\end{center}
-%\begin{center}
-%{\small {\bf Fig. 3.3} Figure's name}
-%\end{center}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%表格
-\begin{center}
-{\small {\bf Table 3.1} \quad The test problems set  \\    %表格题目 change to your tables %%
-\vspace{1mm}
-\doublerulesep 0.5pt
-\begin{tabular}{ccc}
-\hline\hline\\
-[-3mm]
- Problem number & Problem Name & Dimension  \\
-[.8mm]
- \hline
- \\[-3mm]
-       1    &Helical Valley             &3    \\
-       2    &Biggs EXP6                 &6    \\
-       3    &Gaussian                   &3    \\
-       4    &Variably. Dimensioned.     &10   \\
-       5    &Watson                     &12   \\
-       6    &Penalty I                  &10   \\
-       7    &Penalty II                 &10   \\
-       8    &Brown. Dennis.             &4    \\
-       9    &Gulf R. D.                 &3    \\
-       10   &Trigonometric              &20   \\
-       11   &Extended. Rosenbrock.      &10   \\
-       12   &Extended. Pow. Singular.   &4    \\
-       13   &Beale                      &2    \\
-       14   &Wood                       &4    \\
-       15   &Chebyquad                  &8    \\
-       16   &Scaled Cube ($c=10^2$)     &2    \\
-[.8mm]
-\hline\hline
-\end{tabular}}
-\end{center}
-Tables should be inserted in the text as close to the point of
-reference as possible. Some space should be left above and below
-the table.
-
-Tables should be numbered sequentially in the text.
-Captions are to be centralized above the tables.
-
+\begin{proof}
+Since the position of $X$ and $Y$ is symmetric,
+$\E_{\alpha, \beta}[X]=\E_{\alpha, \beta}[Y]$.
+Taking the expectation about $\Beta_2(\alpha, \beta)$
+on both sides of $B=1-X-Y+A$ and using the
+conclusion of Lemma \ref{lem:AB} we have
+\begin{equation*}
+\frac{\beta(\beta-1/2)}{(\alpha+\beta)(\alpha+\beta-1/2)}
+= 1 - 2\E_{\alpha, \beta}[X] +
+\frac{\alpha(\alpha-1/2)}{(\alpha+\beta)(\alpha+\beta-1/2)}
+\end{equation*}
+Solving the about equation we get
+$\E_{\alpha, \beta}[X]=\frac{\alpha}{\alpha + \beta}$.
+Recursively using Equation \eqref{eq:Aexp} with $f(X,Y,Z)=X$
+we have $\E_{\alpha, \beta}[X^m] =
+\prod_{i=0}^{m-1}\frac{\alpha+i}{\alpha+\beta+i}$.
+This expression of higher order moments
+is the same with that of Beta distribution and by
+the uniqueness of moment generating function, we
+conclude that $X$ is actually Beta distribution $B(\alpha,
+\beta)$.
+\end{proof}
+\section{Mixed Moment}
+In this section, we further compute $\E_{\alpha,\beta}[X^mY^rZ^{2t}]$.
+By symmetric property  $\E_{\alpha,\beta}[X^mY^rZ^{2t+1}] = 0$.
+Therefore we only need to consider the case when the power of $Z$
+is even.
+\begin{theorem}\label{thm:mm}
+\begin{equation}\label{eq:ZXtm}
+\E_{\alpha, \beta}[X^mZ^{2t}] = \frac{(2t-1)!!}{2^t}
+\prod_{i=0}^{t-1}
+\frac{\beta+i}{(\alpha+\beta+i-1/2)}
+\frac{\prod_{i=0}^{t+m-1}\alpha+i}{\prod_{i=0}^{2t+m-1}
+\alpha+\beta+i}
+\end{equation}
+\end{theorem}
+\begin{proof}
+We use induction to show Equation \eqref{eq:ZXtm} is true.
+Firstly, Equation \eqref{eq:ZXtm} is true for $t=0$ from 
+Theorem \ref{thm:Xm}. Let $A, B$ be the same as those
+in Lemma \ref{lem:AB}.
+Suppose Equation \eqref{eq:ZXtm} holds for $\E[Z^{2t-2}X^m]$,
+using $Z^2=XY-A=X(1-X-A+B)-A$, then
+\begin{align*}
+\E_{\alpha,\beta}[Z^{2t}X^m] &=
+\E_{\alpha,\beta}[Z^{2t-2}X^m(X-X^2+AX-BX-A)] \\
+&= \E_{\alpha,\beta}[Z^{2t-2}(X^{m+1} - X^{m+2})] +
+\E_{\alpha,\beta}[A Z^{2t-2} (X^{m+1} - X^m)] \\
+&-
+\E_{\alpha,\beta}[BZ^{2t-2} X^{m+1}] \\
+&= \left(1-\frac{\alpha+t+m}{\alpha+\beta+2t+m-1}
+\right)\E_{\alpha, \beta}[Z^{2t-2}X^{m+1}] \\
+&+
+\frac{\alpha(\alpha-1/2)}{(\alpha+\beta)(\alpha+\beta-1/2)}
+\E_{\alpha+1,\beta}[Z^{2t-2}(X^{m+1} - X^m)] \\
+&-\frac{\beta(\beta-1/2)}{(\alpha+\beta)(\alpha+\beta-1/2)}
+\E_{\alpha,\beta+1}[Z^{2t-2}X^{m+1}]\\
+&=\frac{\beta+t-1}{\alpha+\beta + 2t+m-1}
+\E_{\alpha,\beta}[Z^{2t-2}X^{m+1}] \\
+&+\frac{(\alpha+t+m)(\alpha-1/2)}{(\alpha+\beta+2t-1+m)(\alpha+\beta + t - 3/2)}\\
+&\cdot
+\left(1-\frac{\alpha+\beta+2(t-1)+m+1}{\alpha+t+m}\right)
+\E_{\alpha, \beta}[Z^{2t-2}X^{m+1}] \\
+&-\frac{(\beta+t-1)(\beta-1/2)}{(\alpha+\beta+2t-1+m)(\alpha+\beta + t - 3/2)}
+\E_{\alpha,\beta}[Z^{2t-2}X^{m+1}]\\
+&=\frac{(t-1/2)(\beta+t-1)}{(\alpha+\beta+t-3/2)(\alpha+\beta+2t+m-1)}
+\E_{\alpha, \beta}[Z^{2t-2}X^{m+1}]
+\end{align*}
+Using Equation \eqref{eq:ZXtm} for $t-1$
+we can get the same form of expression for $t$.
+\end{proof}
+From Theorem \ref{thm:mm},
+we can get
+the general formula for the mixed moment when $m\geq r$:
+\begin{corollary}\label{cor:mr}
+\begin{align}
+\E_{\alpha, \beta}[X^mY^rZ^{2t}] &= \frac{(2t-1)!!}{2^t}
+\frac{\prod_{j=0}^{t-1} (\beta+j)}{\prod_{j=0}^{t+r-1} (\alpha+\beta-1/2+j)}
+\frac{\prod_{j=0}^{t+m-1}(\alpha+j)}{\prod_{j=0}^{2t+m-1} (\alpha+\beta+j)}\notag\\
+&\cdot\sum_{i=0}^r \frac{1}{2^i}\binom{r}{i}\prod_{j=1}^i (2t-1+2j)
+\frac{\displaystyle\prod_{j=0}^{r-i-1}(\alpha-1/2+j)
+\prod_{j=0}^{i-1}(\beta+j+t)}{\prod_{j=0}^{i-1}(\alpha+\beta+j+2t+m)}
+\label{eq:mrt}
+\end{align}
+\end{corollary}
+Since $\E_{\alpha, \beta}[X^mY^rZ^{2t}]=\E_{\alpha, \beta}[X^rY^mZ^{2t}]$, 
+when $m<r$ we can exchange $m$ and $r$ and use Corollary \ref{cor:mr}.
+\begin{proof}
+From Lemma \ref{lem:AB}, we have
+$X^m Y^r Z^{2t} = X^{m-r}(A+Z^2)^r Z^{2t} $.
+Using binomial theorem we have
+$\E_{\alpha, \beta}[X^m Y^r Z^{2t}] = \sum_{i=0}^r \binom{r}{i}\E_{\alpha, \beta}
+[A^{r-i}X^{m-r}Z^{2(t+i)}]$. Then using Equation \eqref{eq:Aexp} recursively
+we have 
+\begin{align*}
+\E_{\alpha, \beta}
+[A^{r-i}X^{m-r}Z^{2(t+i)}] =&
+\prod_{j=0}^{r-i-1}\frac{(\alpha+j)(\alpha+j-1/2)}
+{(\alpha+j+\beta)(\alpha+j+\beta-1/2)} \\
+\cdot & \E_{\alpha+r-i, \beta}
+[X^{m-r}Z^{2(t+i)}]
+\end{align*}
+Using Theorem \ref{thm:mm} we can finally get the expression in
+Equation \eqref{eq:mrt}.
+\end{proof}
+\section{Conclusion}
+We have derived the formula of high order moments for multivariate Beta distribution
+in second-order matrix case. This result is helpful when the computation of moments
+are required in some statistics problem.
 
 \begin{thebibliography}{stringX}
 %%参考文献 All references should be listed according to the order cited in the text and bracketed.%%
@@ -285,36 +334,17 @@ Captions are to be centralized above the tables.
 \parskip=-1mm
 \small
 
-\bibitem{david1981} Surname(s) Initial(s). {P}aper title. {\it abbreviated title of the journal},
-year of publication, {\bf volume number}(issue number): relevant numbers. %%Papers
-%参考文献[1]Papers:作者姓(首字母大写) 名的首字母缩写. 文章名. {\it　杂志名缩写},　出版年,{\bf 卷}(期): 起止页码.
-
 \bibitem{david1981} Dawid, A.~P. Some matrix-variate distribution theory: Notational
   considerations and a bayesian application.{\it Biometrika} 1981, {\bf 68}(1): 265-274.
 
 \bibitem{ingham_1933} Ingham, A.~E. An integral which occurs in statistics. {\it Mathematical
-  Proceedings of the Cambridge Philosophical Society}, 1933, {\bf 29}(2): 271 -- 276.   %%%
+  Proceedings of the Cambridge Philosophical Society}, 1933, {\bf 29}(2): 271 - 276.   %%%
 
-\bibitem{4} Surname(s) Initial(s). {B}ook {T}itle. Site of Publication: Publishing House,
-Year of Publication: relevant numbers. %% Books
+\bibitem{konno_1988} Konno, Y. Exact moments of the multivariate f and beta distributions.
+{\it Journal of the Japan Statistical Society} 1988, {\bf 18}(2): 123-130
 
-%Books:作者姓（首字母大写） 名的首字母缩写. 书名（实词首字母大写）.出版地: 出版商，出版年: 引用页码.
-
-\bibitem{5} Mor\'{e} J J. Recent Development in Algorithm and Software for
-Trust Region Methods. In: Bachem A, Grotschel M, Kortz B. Mathematical Programming: The State of the Art.
-Berlin: Springer-Verlag, 1983.
-
-\bibitem{6}
-Conn A R, Could N I M, Toint P. L. Trust-Region Methods:
-MPS-SIAM Series on Optimization. Philadelphia, PA, USA: SIAM, 2000.
-
-\bibitem{7} Yuan Y, Sun W. Optimization Theory and Methods. Beijing: Science Press, 1997.
-
-\bibitem{8} Zhang X S, Zhang J L, Liao L Z. An adaptive trust region
-method and its convergence. {\it Sci. China}, 2002, {\bf 45}: 620--631.
-
-\bibitem{9} Zhang J, Xu C. Trust region dogleg path algorithms for
-unconstrained minimization. {\it Ann. Oper. Res.}, 1999, {\bf 87}: 407--418.
+\bibitem{siegel_1935} Siegel, C.~L. Über die analytische theorie der quadratischen formen.
+  {\it Annals of Mathematics} 1935, {\bf 36}(3): 527-606.
 
 \end{thebibliography}
 
