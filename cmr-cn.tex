@@ -1,12 +1,4 @@
-%%%%%%%%%%%%%%%%%%% CMR Begin %%%%%%%%%%%%%%%%%
-\documentclass[twoside]{article}%{cmr}%                       %         %
-%\special{pdf: pagesize width 19.1cm height 26.6cm}           %         %
-\textwidth=14truecm  \textheight=20.5truecm                   %         %
-\oddsidemargin=0mm   \evensidemargin=0mm                      %         %
-\usepackage{amssymb,amsmath,epsfig,mathrsfs}                  %  Don't  %
-%\input cchead.sty                                             %         %
-\pagestyle{headings}                                          %         %
-\headheight=10mm\headsep=3mm\topmargin=0mm                    %         %
+\documentclass[mathpazo]{cmr}
 \usepackage{amssymb}
 \usepackage{amsmath}
 \usepackage{amsthm}
@@ -14,128 +6,75 @@
 \DeclarePairedDelimiter\abs{\lvert}{\rvert}
 \def\E{\mathbb{E}}
 \def\Beta{\textrm{Beta}}
-                                                              %         %
-\begin{document}                                              %         %
-                                                              % delete  %
-\catcode`!=11                                                 %         %
-\let\!int\int \def\int{\displaystyle\!int}                    %         %
-%%\let\!frac\frac \def\frac{\displaystyle\!frac}              %         %
-\catcode`!=12                                                 %         %
-                                                              %   or    %
-\def\pd#1#2{\frac{\partial#1}{\partial#2}}                    %         %
-\baselineskip=5truemm \font\abstractsizebf=cmbx9              %         %
-\font\abstractsizeit=cmti9 \font\shumeiit=cmti8               %  alter  %
-\font\abstractsize=cmr9 \font\shumeisize=cmr8                 %         %
-\abovedisplayskip=.5mm plus .5mm minus .5mm                   %         %
-\belowdisplayskip=.5mm plus .5mm minus .5mm                   %         %
-\def\evenhead{\pushziti\hbox to                               %  this   %
-\hsize{\rm\shumeisize\thepage\hfill                           %         %
-    \shumeisize  \hspace{10mm}COMM. MATH. RES.                %  part   %
-    \hfill VOL.~3?}\popziti}                                  %         %
-\def\oddhead{\hbox to \hsize{\shumeisize NO.~?\hfill          %         %
-    {\shumeiit XXXX X. X. et al.}\ \
-%将XXXX X. X.换成第一作者姓、名的缩写，字母全部大写 change to the abbreviated name of first author %%
-    \shumeisize A THEOREM OF NEHARI TYPE
-%将A THEOREM OF NEHARI TYPE换成该文标题缩写（不是单词缩写），字母全部大写.change to the abbreviated title of your paper %%
-    \hfill\rm\shumeisize\thepage}}                            %         %
-\title{\vspace{-1in}                                          %         %
-   \parbox{\linewidth}{\footnotesize\noindent                 %         %
-     \unitlength=1mm                                          %  Don't  %
-     \doublerulesep0.5pt                                      %         %
-%     \begin{picture}(28,0)                                    %         %
-%     \put(0,0){\line(1,0){28}}                                % delete  %
-%     \put(0,-0.15){\line(1,0){28}}                            %         %
-%     \put(0,-0.3){\line(1,0){28}}                             %   or    %
-%     \put(0,-1){\line(1,0){28}}                               %         %
-%     \put(0,-15.5){\line(1,0){28}}                            %  alter  %
-%     \put(0,-4){\sc Communications}                           %         %
-%     \put(0,-6.2){\sc in}                                     %         %
-%     \put(0,-9){\sc Mathematical}                             %  this   %
-%     \put(0,-11.5){\sc Research}                              %         %
-%     \put(0,-14){\bf3?\rm(?)(201?), ???--???}                 %  part   %
-%     \end{picture}                                            %         %
-}                                                             %         %
-   \vspace{10mm}%%{\bigskipamount}                            %         %
-\\                                                            %         %
-\bf Second-order Matrix Extension of Beta Distribution and its high Order Moments                                         %题目 change to your title %%
-\footnotetext{                                                %         %
-\bf\scriptsize Received date: \rm\scriptsize Apr. 26, 2020.   %投稿日期 %
-\hfil\break\indent                                            %         %
-\bf\scriptsize\hspace{1.3mm} Foundation item: \rm\scriptsize  %         %
-The NSF (61807021) of China.                                  %基金 change to your supported foundation %%
-\hfil\break\indent                                            %         %
-\bf\scriptsize\hspace{2.3mm}{\rm *} {Corresponding author{\rm .}} %         %
-\hfil\break\indent                                            %         %
-\bf\scriptsize\hspace{2.3mm}{E-mail address: \rm\scriptsize   %         %
-zhaof17@mails.tsinghua.edu.cn (Zhao Feng), shaolun.huang@sz.tsinghua.edu.cn (Huang Shao-Lun).}%%电子邮件 change to your and the corresponding author's E-mail address %%
-}}
-\date{}
-\author{\abstractsize\sc Zhao Feng$^{1, {\text *}}$,~ %(周一峰)    %所有作者的中文姓名必须填写
-and~ Huang Shao-Lun$^2$ %(张三)                                       %如有通讯作者(非第一作者),请在其名字上加注"^{\text*}",并
-%and~ Yang Si$^{1, {\text *}}$   %(杨四)                       %在第一作者的E-mail后给出其E-mail。change to authors' full names%         　
-\\
-\abstractsize{({\it\abstractsizeit 1. Department of Electronics Engineering, Tsinghua University, Beijing, 100089})}\\  %所有作者单位
-\abstractsize{({\it\abstractsizeit 2. Tsinghua-Berkeley Shenzhen Institute, Shenzhen, 518000})}
-%\\[5mm]Communicated by  编委
+
+%%%%% author macros %%%%%%%%%
+% place your own macros HERE
+%%%%% end %%%%%%%%%
+
+\begin{document}
+%%%%% title : short title may not be used but TITLE is required.
+% \title{TITLE}
+% \title[short title]{TITLE}
+\title{Second-order Matrix Extension of Beta Distribution and its high Order Moments}
+
+%%%%% author(s) :
+% single author:
+% \author[name in running head]{AUTHOR\corrauth}
+% [name in running head] is NOT OPTIONAL, it is a MUST.
+% Use \corrauth to indicate the corresponding author.
+% Use \email to provide email address of author.
+% \footnote and \thanks are not used in the heading section.
+% Another acknowlegments/support of grants, state in Acknowledgments section
+% \section*{Acknowledgments}
+\author[Feng Zhao et~al.]{Feng Zhao\affil{1}\comma\corrauth and Shao-Lun Huang \affil{2}}
+\address{\affilnum{1}\ Department of Electronics Engineering, Tsinghua University, Beijing, 100089, P.R. China \\
+\affilnum{2}\
+Tsinghua-Berkeley Shenzhen Institute, Shenzhen, 518000
 }
+\emails{ {\tt author@email} (Feng Zhao), {\tt shaolun.huang@sz.tsinghua.edu.cn}(Shao-Lun Huang)}
 
-\maketitle
+% multiple authors:
+% Note the use of \affil and \affilnum to link names and addresses.
+% The author for correspondence is marked by \corrauth.
+% use \emails to provide email addresses of authors
+% e.g. below example has 3 authors, first author is also the corresponding
+%      author, author 1 and 3 having the same address.
+% \author[Z. Zhang et~al.]{Zhengru Zhang\affil{1}\comma\corrauth,
+%       Author Chan\affil{2}~and Author Zhao\affil{1}}
+% \address{\affilnum{1}\ School of Mathematical Sciences,
+%          Beijing Normal University,
+%          Beijing 100875, P.R. China. \\
+%           \affilnum{2}\ Department of Mathematics,
+%           Hong Kong Baptist University, Hong Kong SAR.}
+% \emails{{\tt zhang@email} (Z.~Zhang), {\tt chan@email} (A.~Chan),
+%          {\tt zhao@email} (A.~Zhao)}
+% \footnote and \thanks are not used in the heading section.
+% Another acknowlegments/support of grants, state in Acknowledgments section
+% \section*{Acknowledgments}
 
-%% begin of abstract etc.
 
-\let\oldparindent\parindent
-\leftskip10truemm
-\rightskip10truemm
-{
-%\scriptsize
-\parindent=0pt
-\abstractsizebf Abstract: \rm
-\abstractsize
+%%%%% Begin Abstract %%%%%%%%%%%
+\begin{abstract}
 In this article, we consider a second-order matrix extension of Beta distribution.
 That is a distribution on second-order random matrix.
 We will give the analytical
 formula for its high order moments, which is superior over general
-numerical integration method.                                                    %% 摘要change to abstract %%
-\\
-\abstractsizebf Key words:
-\abstractsize  multivariate Beta distribution, higher order moments, multivariate Gamma function                   %% 关键词change to keywords %%
-\\
-\abstractsizebf 2010 MR subject classification:
-\abstractsize 62H10 , 33B15                                     %% 分类号change to 2000 MR subject classification %%
-\\
-\abstractsizebf Document code:
-\abstractsize A
-\\
-\abstractsizebf Article ID:
-\abstractsize undetermined
-\\
-\abstractsizebf DOI:
-\abstractsize undetermined
+numerical integration method.
+\end{abstract}
+%%%%% end %%%%%%%%%%%
+
+%%%%% AMS/PACs/Keywords %%%%%%%%%%%
+%\pac{}
+\ams{62H10, 33B15%The information of the AMS subject classification can be found in http://mathscinet.ams.org/msc/msc2010.html
 }
+\keywords{multivariate Beta distribution, higher order moments, multivariate Gamma function.}
 
-\def\parindent{\oldparindent}
-\leftskip0truemm
-\rightskip0truemm
+%%%% maketitle %%%%%
+\maketitle
 
-%% end of abstract
 
-\newtheorem{theorem}{Theorem}[section]                                               %
-\newtheorem{definition}{Definition}[section]                                         %
-\newtheorem{lemma}{Lemma}[section]                                                   %
-\newtheorem{proposition}{Proposition}[section]                                       %
-\newtheorem{corollary}{Corollary}[section]                                           %
-\newtheorem{remark}{Remark}[section]                                                 %
-\renewcommand{\theequation}{\thesection.\arabic{equation}}                           %
-\catcode`@=11                                                                        %
-\@addtoreset{equation}{section}                                                      %
-\setcounter{page}{1}                                                                 %
-\thispagestyle{empty}                                                                %
-\catcode`@=12                                                                        %
-%%%%%%%%%%%%%%%%%%%%% CMR End  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
+%%%% Start %%%%%%
 \section{Introduction}
-%%行文中引用参考文献的格式如下，引用时一律按行文中引用的先后为序；没有引用的参考文献不得列入文献表。
-
 David introduces an extension of
 multivariate extension for Beta distribution,
 denoted as $\mathbf{B}(\alpha, \beta; I_p)$ (see \cite{david1981}) .
@@ -327,12 +266,12 @@ We have derived the formula of high order moments for multivariate Beta distribu
 in second-order matrix case. This result is helpful when the computation of moments
 are required in some statistics problem.
 
-\begin{thebibliography}{stringX}
-%%参考文献 All references should be listed according to the order cited in the text and bracketed.%%
-\leftskip=-8mm
-\parskip=-1mm
-\small
+%%%% Acknowledgments %%%%%%%%
+\section*{Acknowledgments}
+The author would like to thank  ....
 
+%%%% Bibliography  %%%%%%%%%%
+\begin{thebibliography}{99}
 \bibitem{david1981} Dawid, A.~P. Some matrix-variate distribution theory: Notational
   considerations and a bayesian application.{\it Biometrika} 1981, {\bf 68}(1): 265-274.
 
@@ -342,10 +281,7 @@ are required in some statistics problem.
 \bibitem{konno_1988} Konno, Y. Exact moments of the multivariate f and beta distributions.
 {\it J. Japan Stat. Soc.} 1988, {\bf 18}(2): 123-130
 
-\bibitem{ingham_1933} Ingham, A.~E. An integral which occurs in statistics. {\it Math. Proc. Cambridge Philos. Soc.}, 1933, {\bf 29}(2): 271 - 276.   %%%
-
+\bibitem{ingham_1933} Ingham, A.~E. An integral which occurs in statistics. {\it Math. Proc. Cambridge Philos. Soc.}, 1933, {\bf 29}(2): 271 - 276.
 \end{thebibliography}
-
-%%%%%%%%%%%%%%%%%%%%%end%%%%%%%%%%%%%%%%%%%%%%
 
 \end{document}
