@@ -1,4 +1,4 @@
-\documentclass[review,authoryear]{elsarticle}
+\documentclass[mathpazo]{cmr}
 \usepackage{amssymb}
 \usepackage{amsmath}
 \usepackage{amsthm}
@@ -6,16 +6,18 @@
 \DeclarePairedDelimiter\abs{\lvert}{\rvert}
 \def\E{\mathbb{E}}
 \def\Beta{\textrm{Beta}}
-\newtheorem{lemma}{Lemma}
-\newtheorem{theorem}{Theorem}
 \newtheorem{cor}{Corollary}
 
 \begin{document}
-\begin{frontmatter}
+
 \title{Second-order matrix extension of Beta distribution and its high order moments}
-\author[1]{Feng Zhao}
-\ead{zhaof17@mails.tsinghua.edu.cn}
-\address[1]{Department of Electronic Engineering, Tsinghua University, Beijing China}
+\author[Feng Zhao et~al.]{Feng Zhao\affil{1}\comma\corrauth and Shao-Lun Huang \affil{2}}
+\address{\affilnum{1}\ Department of Electronics Engineering, Tsinghua University, Beijing, 100089, P.R. China \\
+\affilnum{2}\
+Tsinghua-Berkeley Shenzhen Institute, Shenzhen, 518000
+}
+\emails{ {\tt zhaof17@mails.tsinghua.edu.cn} (Feng Zhao), {\tt shaolun.huang@sz.tsinghua.edu.cn}(Shao-Lun Huang)}
+
 
  \begin{abstract}
 In this article, we consider a second-order matrix extension of Beta distribution.
@@ -24,14 +26,18 @@ We will give the analytical
 formula for its high order moments, which is superior over general
 numerical integration method.
  \end{abstract}
-\begin{keyword}
- multivariate Beta distribution \sep higher order moments
-\end{keyword}
-\end{frontmatter}
+ \ams{62H10, 33B15%The information of the AMS subject classification can be found in http://mathscinet.ams.org/msc/msc2010.html
+}
+
+
+\keywords{ multivariate Beta distribution, higher order moments, multivariate Gamma function
+}
+\maketitle
+
 \section{Introduction}
-\citet{david1981} introduces an extension of
+David introduces an extension of
 multivariate extension for Beta distribution,
-denoted as $\mathbf{B}(\alpha, \beta; I_p)$.
+denoted as $\mathbf{B}(\alpha, \beta; I_p)$ (see \cite{david1981}).
 It is a random $p\times p$  symmetric matrix $W$ whose density
 function is given by
 \begin{align}
@@ -41,7 +47,7 @@ p(w) &= \frac{1}{B_p(\alpha, \beta)}\abs{I-w}^{\alpha-\frac{p+1}{2}}
 B_p(\alpha, \beta) &= \int_{w,I-w \in S_{p,p}^{+} }\abs{I-w}^{\alpha-\frac{p+1}{2}}
 \abs{w}^{\beta-\frac{p+1}{2}}dw \textrm{ where } \alpha, \beta > \frac{p-1}{2}
 \end{align}
-$B_p(\alpha, \beta)$ is called the multivariate Beta function (\citet{siegel_1935}); 
+$B_p(\alpha, \beta)$ is called the multivariate Beta function (see \cite{siegel_1935}); 
 $\abs{W}$ is the determinant of matrix $W$ and $S_{p,p}^{++}$ is the 
 collection of positive
 definite matrix.
@@ -51,8 +57,7 @@ $0<x<1$.
 This extension may have useful applications in multivariate statistical
 problems but little is known about the analytical property of such extension.
 
-\cite{konno_1988}
-has derived the formula of moment up to second order.
+Konno has derived the formula of moment up to second order (see \cite{konno_1988}).
 In this paper, we focus on the case $p=2$ and deduce the analytical form of 
 higher order moments for $\mathbf{B}(\alpha, \beta; I_2)$.
 This formula
@@ -91,7 +96,7 @@ To accomplish this goal, we need the following lemma:
 \begin{proof}
 	For multivariate Beta function we have
 	$B_p(a, b) = \frac{\Gamma_p(a)\Gamma_p(b)}{\Gamma_p(a+b)}$
-	where $\Gamma_p$ is the multivariate Gamma function (\cite{ingham_1933}).
+	where $\Gamma_p$ is the multivariate Gamma function (see \cite{ingham_1933}).
 	For $p=2$ we have $\Gamma_2(a) = \sqrt{\pi}\Gamma(a)\Gamma(a-1/2)$.
 	\begin{align*}
 	\frac{\E_{\alpha, \beta}[Af(X,Y,Z)]}{\E_{\alpha+1, \beta}[f(X,Y,Z)]} &
@@ -220,6 +225,20 @@ when $m<r$ we can exchange $m$ and $r$ and use Corollary \ref{cor:mr}.
 We have derived the formula of high order moments for multivariate Beta distribution
 in second-order matrix case. This result is helpful when the computation of moments
 are required in some statistics problem.
-\bibliographystyle{elsarticle-harv}
-\bibliography{exportlist}
+%\bibliographystyle{elsarticle-harv}
+%\bibliography{exportlist}
+%%%% Bibliography  %%%%%%%%%%
+\begin{thebibliography}{99}
+\bibitem{david1981} Dawid, A.~P. Some matrix-variate distribution theory: Notational
+  considerations and a bayesian application.{\it Biometrika} 1981, {\bf 68}(1): 265-274.
+
+\bibitem{siegel_1935} Siegel, C.~L. Über die analytische theorie der quadratischen formen((in German).
+  {\it Anal. Math.} 1935, {\bf 36}(3): 527-606.
+
+\bibitem{konno_1988} Konno, Y. Exact moments of the multivariate f and beta distributions.
+{\it J. Japan Stat. Soc.} 1988, {\bf 18}(2): 123-130
+
+\bibitem{ingham_1933} Ingham, A.~E. An integral which occurs in statistics. {\it Math. Proc. Cambridge Philos. Soc.}, 1933, {\bf 29}(2): 271 - 276.
+\end{thebibliography}
+
 \end{document}
