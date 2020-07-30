@@ -40,6 +40,7 @@ numerical integration method.
 Moments of probability distribution is useful in statistics. Given the moment sequence, the probability distribution is unique under some mind conditions.
 To prove the convergence of random variables,  we can prove the convergence of its moment sequences.
 % https://encyclopediaofmath.org/index.php?title=Moments,_method_of_(in_probability_theory)
+
 David introduces an extension of
 multivariate extension for Beta distribution,
 denoted as $\mathbf{B}(\alpha, \beta; I_p)$ (see \cite{david1981}).
@@ -229,27 +230,23 @@ when $m<r$ we can exchange $m$ and $r$ and use Corollary \ref{cor:mr}.
 \section{Case Studies}
 In this Section, we will give a natural example which illustrates how our result above can be used.
 We will consider the random matrix $S=QQ^T$ where $Q$ is $n\times k$ random orthogonal matrix,
-We are interested in how $\E[S_{12}^{2s}S_{11}^t]$ decreases as $t\to \infty$.
+We are interested in how $\E[S_{12}^{2s}S_{11}^t]$ decreases as $k\to \infty$ ($n \to \infty$ too, since $n > k$).
 
+From Proposition 7.2 of \cite{eaton1989group},
+$
+\begin{pmatrix}
+S_{11} & S_{12} \\
+S_{21} & S_{22}
+\end{pmatrix}
+$
+is exactly 2 by 2 random matrix of Beta distribution with parameter $B(\frac{k}{2}, \frac{n-k}{2}, I_2)$.
 
 \section{Conclusion}
-We have derived the formula of high order moments for multivariate Beta distribution
+We have derived the formula of higher order moments for multivariate Beta distribution
 in second-order matrix case. This result is helpful when the computation of moments
 are required in some statistics problem.
-%\bibliographystyle{elsarticle-harv}
-%\bibliography{exportlist}
+\bibliographystyle{plain}
+\bibliography{exportlist}
 %%%% Bibliography  %%%%%%%%%%
-\begin{thebibliography}{99}
-\bibitem{david1981} Dawid, A.~P. Some matrix-variate distribution theory: Notational
-  considerations and a bayesian application.{\it Biometrika} 1981, {\bf 68}(1): 265-274.
-
-\bibitem{siegel_1935} Siegel, C.~L. Über die analytische theorie der quadratischen formen((in German).
-  {\it Anal. Math.} 1935, {\bf 36}(3): 527-606.
-
-\bibitem{konno_1988} Konno, Y. Exact moments of the multivariate f and beta distributions.
-{\it J. Japan Stat. Soc.} 1988, {\bf 18}(2): 123-130
-
-\bibitem{ingham_1933} Ingham, A.~E. An integral which occurs in statistics. {\it Math. Proc. Cambridge Philos. Soc.}, 1933, {\bf 29}(2): 271 - 276.
-\end{thebibliography}
 
 \end{document}
