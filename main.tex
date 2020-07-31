@@ -1,22 +1,25 @@
-\documentclass[mathpazo]{cmr}
+\documentclass{elsarticle}
 \usepackage{amssymb}
 \usepackage{amsmath}
 \usepackage{amsthm}
 \usepackage{mathtools}
 \DeclarePairedDelimiter\abs{\lvert}{\rvert}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
 \def\E{\mathbb{E}}
 \def\Beta{\textrm{Beta}}
 \newtheorem{cor}{Corollary}
 
 \begin{document}
-
-\title{2 by 2 matrix extension of Beta distribution and its higher moments}
-\author[Feng Zhao et~al.]{Feng Zhao\affil{1}\comma\corrauth and Shao-Lun Huang \affil{2}}
-\address{\affilnum{1}\ Department of Electronics Engineering, Tsinghua University, Beijing, 100089, P.R. China \\
-\affilnum{2}\
-Tsinghua-Berkeley Shenzhen Institute, Shenzhen, 518000
-}
-\emails{ {\tt zhaof17@mails.tsinghua.edu.cn} (Feng Zhao), {\tt shaolun.huang@sz.tsinghua.edu.cn}(Shao-Lun Huang)}
+\begin{frontmatter}
+\title{Higher moments of the multivariate Beta distribution}
+\author{Feng Zhao}
+%\author[Feng Zhao et~al.]{Feng Zhao\affil{1}\comma\corrauth and Shao-Lun Huang \affil{2}}
+%\address{\affilnum{1}\ Department of Electronics Engineering, Tsinghua University, Beijing, 100089, P.R. China \\
+%\affilnum{2}\
+%Tsinghua-Berkeley Shenzhen Institute, Shenzhen, 518000
+%}
+%\emails{ {\tt zhaof17@mails.tsinghua.edu.cn} (Feng Zhao), {\tt shaolun.huang@sz.tsinghua.edu.cn}(Shao-Lun Huang)}
 
 
  \begin{abstract}
@@ -28,18 +31,24 @@ for 2 by 2 matrix.
 % motivation
 % long tail; short tail property; what's the application
  \end{abstract}
- \ams{62H10, 33B15%The information of the AMS subject classification can be found in http://mathscinet.ams.org/msc/msc2010.html
-}
+% \ams{62H10, 33B15%The information of the AMS subject classification can be found in http://mathscinet.ams.org/msc/msc2010.html
+%}
 
-
-\keywords{ multivariate Beta distribution, higher moments, multivariate Gamma function
-}
-\maketitle
-
+\begin{keyword}
+	multivariate Beta distribution \sep higher moments
+\end{keyword}
+%\keywords{ multivariate Beta distribution, higher moments, multivariate Gamma function
+%}
+%\maketitle
+\end{frontmatter}
 \section{Introduction}
-Moments of probability distribution is useful in statistics. Given the moment sequence, the probability distribution is unique under some mind conditions.
-To prove the convergence of random variables,  we can prove the convergence of its moment sequences.
+Moments of probability distribution are an important topic in statistics. Given the moment sequence,
+the probability distribution is unique under some mind conditions.
+To prove the convergence of random variables,  we can prove the convergence of its moment sequences instead.
 % https://encyclopediaofmath.org/index.php?title=Moments,_method_of_(in_probability_theory)
+To accomplish such goal, the analytical form of higher moments is a prerequisite. The techniques to compute higher moments
+for different distributions differ. In this article, we focus
+on the Beta distribution of 2 by 2 matrix.
 
 David introduces an extension of
 multivariate extension for Beta distribution,
@@ -65,10 +74,10 @@ problems but little is known about the analytical property of such extension.
 
 Konno has derived the formula of moment up to second order (see \cite{konno_1988}).
 In this paper, we focus on the case $p=2$ and deduce the analytical form of 
-higher order moments for $\mathbf{B}(\alpha, \beta; I_2)$.
+higher moments for $\mathbf{B}(\alpha, \beta; I_2)$.
 This formula
 includes the expectation and variance, which are the first and second
-order moment respectively. The higher order moments formula, as
+order moment respectively. The higher moments formula, as
 far as we know, is novel and can be used directly in the computation
 related with multivariate Beta models instead of approximate
 numerical integration.
@@ -139,7 +148,7 @@ Using the above Lemma, we give the main conclusion of this section:
 	Recursively using Equation \eqref{eq:Aexp} with $f(X,Y,Z)=X$
 	we have $\E_{\alpha, \beta}[X^m] =
 	\prod_{i=0}^{m-1}\frac{\alpha+i}{\alpha+\beta+i}$.
-	This expression of higher order moments
+	This expression of higher moments
 	is the same with that of Beta distribution on bounded interval $[0,1]$, we
 	conclude that $X$ is actually Beta distribution $B(\alpha,
 	\beta)$.
@@ -244,9 +253,8 @@ Using Theorem \ref{thm:mm}, we could write
 $\E[S_{11}^mS_{12}^{2t}] \sim \frac{(2t-1)!!}{2^t} \frac{r^t(1-t)^{t+m}}{n^t} = O(n^{-t})$.
 
 \section{Conclusion}
-We have derived the formula of higher order moments for multivariate Beta distribution
-in second-order matrix case. This result is helpful when the computation of moments
-are required in some statistics problem.
+We have derived the formula of higher moments for multivariate Beta distribution
+of 2 by 2 matrix. This result is helpful for analyzing other statistical properties of multivariate Beta distribution.
 \bibliographystyle{plain}
 \bibliography{exportlist}
 %%%% Bibliography  %%%%%%%%%%
