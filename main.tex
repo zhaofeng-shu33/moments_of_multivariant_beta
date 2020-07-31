@@ -20,11 +20,11 @@ Tsinghua-Berkeley Shenzhen Institute, Shenzhen, 518000
 
 
  \begin{abstract}
-Multivariate Beta distribution has been shown a useful model in many statistical problems.
-We extend Beta distribution to 2 by 2 random matrix.
-We (investigate) will give the analytical
-formula for its higher moments. Our analytical formula can be used to compute the moments numerically (efficiency and accuracy), which is superior over general
-numerical integration method.
+Beta distribution has been shown a useful model in many statistical problems.
+In this paper, we extend Beta distribution to 2 by 2 matrix and
+give the analytical
+formula for its higher moments. Our analytical formula can be used to analyze the asymptotic behavior of Beta distribution
+for 2 by 2 matrix.
 % motivation
 % long tail; short tail property; what's the application
  \end{abstract}
@@ -227,10 +227,10 @@ when $m<r$ we can exchange $m$ and $r$ and use Corollary \ref{cor:mr}.
 	Using Theorem \ref{thm:mm} we can finally get the expression in
 	Equation \eqref{eq:mrt}.
 \end{proof}
-\section{Case Studies}
+\section{Case Study}
 In this Section, we will give a natural example which illustrates how our result above can be used.
 We will consider the random matrix $S=QQ^T$ where $Q$ is $n\times k$ random orthogonal matrix,
-We are interested in how $\E[S_{12}^{2s}S_{11}^t]$ decreases as $k\to \infty$ ($n \to \infty$ too, since $n > k$).
+We are interested in how $\E[S_{11}^mS_{12}^{2t}]$ changes as $k\to \infty$ when $r=\frac{k}{n}$ is fixed.
 
 From Proposition 7.2 of \cite{eaton1989group},
 $
@@ -240,6 +240,8 @@ S_{21} & S_{22}
 \end{pmatrix}
 $
 is exactly 2 by 2 random matrix of Beta distribution with parameter $B(\frac{k}{2}, \frac{n-k}{2}, I_2)$.
+Using Theorem \ref{thm:mm}, we could write
+$\E[S_{11}^mS_{12}^{2t}] \sim \frac{(2t-1)!!}{2^t} \frac{r^t(1-t)^{t+m}}{n^t} = O(n^{-t})$.
 
 \section{Conclusion}
 We have derived the formula of higher order moments for multivariate Beta distribution
