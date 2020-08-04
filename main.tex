@@ -12,7 +12,7 @@
 
 \begin{document}
 \begin{frontmatter}
-\title{Higher moments of the multivariate Beta distribution}
+\title{Moments of the multivariate Beta distribution}
 \author{Feng Zhao}
 %\author[Feng Zhao et~al.]{Feng Zhao\affil{1}\comma\corrauth and Shao-Lun Huang \affil{2}}
 %\address{\affilnum{1}\ Department of Electronics Engineering, Tsinghua University, Beijing, 100089, P.R. China \\
@@ -25,7 +25,7 @@
  \begin{abstract}
 In this paper, we extend Beta distribution to 2 by 2 matrix and
 give the analytical
-formula for its higher moments. Our analytical formula can be used to analyze the asymptotic behavior of Beta distribution
+formula for its moments. Our analytical formula can be used to analyze the asymptotic behavior of Beta distribution
 for 2 by 2 matrix.
 % motivation
 % long tail; short tail property; what's the application
@@ -45,7 +45,7 @@ Moments of probability distribution are an important topic in statistics. Given 
 the probability distribution is unique under some mind conditions.
 To prove the convergence of random variables,  we can prove the convergence of its moment sequences instead.
 % https://encyclopediaofmath.org/index.php?title=Moments,_method_of_(in_probability_theory)
-To accomplish such goal, the analytical form of higher moments is a prerequisite. The techniques to compute higher moments
+To accomplish such goal, the analytical form of moments is a prerequisite. The techniques to compute moments
 for different distributions differ. In this article, we focus
 on the Beta distribution of 2 by 2 matrix.
 
@@ -70,17 +70,17 @@ $0<x<1$.
 
 This extension may have useful applications in multivariate statistical
 problems but little is known about the analytical property of such extension.
-For example, it is unknown whether the higher moments $\E[f(W)]$ can be written in concise form,
+For example, it is unknown whether the moments $\E[f(W)]$ can be written in concise form,
 where $f$ is a monomial about the positive matrix $W$.
 
 Konno has derived the formula of the moment up to second order (see \cite{konno_1988}).
 In this paper, we focus on the case $p=2$ and deduce the analytical form of 
-higher moments for $\mathbf{B}(\alpha, \beta; I_2)$.
+moments for $\mathbf{B}(\alpha, \beta; I_2)$.
 This formula
 includes the expectation and variance, which are the first and second
 order moment respectively. The higher moments formula, as
 far as we know, is novel and can be used directly in the computation
-related with multivariate Beta models instead of approximate
+related with multivariate Beta models instead of approximating
 numerical integration.
 
 In this article, the following notation convention is adopted:
@@ -149,7 +149,7 @@ Using the above Lemma, we give the main conclusion of this section:
 	Recursively using Equation \eqref{eq:Aexp} with $f(X,Y,Z)=X$
 	we have $\E_{\alpha, \beta}[X^m] =
 	\prod_{i=0}^{m-1}\frac{\alpha+i}{\alpha+\beta+i}$.
-	This expression of higher moments
+	This expression of moments
 	is the same with that of Beta distribution on bounded interval $[0,1]$, we
 	conclude that $X$ is actually Beta distribution $B(\alpha,
 	\beta)$.
@@ -254,7 +254,7 @@ Using Theorem \ref{thm:mm}, we could write
 $\E[S_{11}^mS_{12}^{2t}] \sim \frac{(2t-1)!!}{2^t} \frac{r^t(1-t)^{t+m}}{n^t} = O(n^{-t})$.
 
 \section{Conclusion}
-We have derived the formula of higher moments for multivariate Beta distribution
+We have derived the formula of moments for multivariate Beta distribution
 of 2 by 2 matrix. This result is helpful for analyzing other statistical properties of multivariate Beta distribution.
 \bibliographystyle{plain}
 \bibliography{exportlist}
