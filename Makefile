@@ -14,5 +14,7 @@ $(DIST_DIR)/main.pdf: main.tex $(BUILD_DIR)/exportlist.bib
 	mkdir -p $(BUILD_DIR)
 	mkdir -p $(DIST_DIR)
 	pdflatex -output-directory=$(BUILD_DIR) main.tex
+	cd $(BUILD_DIR) && bibtex main.aux && cd ..
+	pdflatex -output-directory=$(BUILD_DIR) main.tex
 	pdflatex -output-directory=$(BUILD_DIR) main.tex
 	cp $(BUILD_DIR)/main.pdf $(DIST_DIR)/main.pdf
