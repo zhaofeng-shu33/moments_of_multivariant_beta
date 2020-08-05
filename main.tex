@@ -71,7 +71,7 @@ $0<x<1$.
 This extension may have useful applications in multivariate statistical
 problems but little is known about the analytical property of such extension.
 For example, it is unknown whether the moments $\E[f(W)]$ can be written in concise form,
-where $f$ is a monomial about the positive matrix $W$.
+where $f$ is a monomial about the positive-definite matrix $W$.
 
 Konno has derived the formula of the moment up to second order (see \cite{konno_1988}).
 In this paper, we focus on the case $p=2$ and deduce the analytical form of 
@@ -137,7 +137,7 @@ Using the above Lemma, we give the main conclusion of this section:
 	$\E_{\alpha, \beta}[X]=\E_{\alpha, \beta}[Y]$.
 	Taking the expectation about $\Beta_2(\alpha, \beta)$
 	on both sides of $B=1-X-Y+A$ and using the
-	conclusion of Lemma \ref{lem:AB} we have
+	conclusion of Lemma \ref{lem:AB}, we have
 	\begin{equation*}
 	\frac{\beta(\beta-1/2)}{(\alpha+\beta)(\alpha+\beta-1/2)}
 	= 1 - 2\E_{\alpha, \beta}[X] +
@@ -153,11 +153,11 @@ Using the above Lemma, we give the main conclusion of this section:
 	conclude that $X$ is actually Beta distribution $B(\alpha,
 	\beta)$.
 \end{proof}
-\section{Mixed Moment}
-In this section, we further compute $\E_{\alpha,\beta}[X^mY^rZ^{2t}]$.
+\section{Mixed Moments}
+In this section, we further compute $\E_{\alpha,\beta}[X^mY^rZ^{t}]$.
 By symmetric property  $\E_{\alpha,\beta}[X^mY^rZ^{2t+1}] = 0$.
 Therefore we only need to consider the case when the power of $Z$
-is even.
+is even. Firstly We consider the case when $r=0$:
 \begin{theorem}\label{thm:mm}
 	\begin{equation}\label{eq:ZXtm}
 	\E_{\alpha, \beta}[X^mZ^{2t}] = \frac{(2t-1)!!}{2^t}
@@ -217,7 +217,7 @@ the general formula for the mixed moment when $m\geq r$:
 	\end{align}
 \end{cor}
 Since $\E_{\alpha, \beta}[X^mY^rZ^{2t}]=\E_{\alpha, \beta}[X^rY^mZ^{2t}]$, 
-when $m<r$ we can exchange $m$ and $r$ and use Corollary \ref{cor:mr}.
+when $m<r$ we can exchange $m$ with $r$ and then use Corollary \ref{cor:mr}.
 \begin{proof}
 	From Lemma \ref{lem:AB}, we have
 	$X^m Y^r Z^{2t} = X^{m-r}(A+Z^2)^r Z^{2t} $.
@@ -237,8 +237,8 @@ when $m<r$ we can exchange $m$ and $r$ and use Corollary \ref{cor:mr}.
 	Equation \eqref{eq:mrt}.
 \end{proof}
 \section{Case Study}
-In this Section, we will give a natural example which illustrates how our result above can be used.
-We will consider the random matrix $S=QQ^T$ where $Q$ is $n\times k$ random orthogonal matrix,
+In this section, we will give a natural example which illustrates how our result can be used.
+We will consider the random matrix $S=QQ^T$ where $Q$ is $n\times k$ random orthogonal matrix.
 We are interested in how $\E[S_{11}^mS_{12}^{2t}]$ changes as $k\to \infty$ when $r=\frac{k}{n}$ is fixed.
 
 From Proposition 7.2 of \cite{eaton1989group},
@@ -251,6 +251,7 @@ $
 is exactly 2 by 2 random matrix of Beta distribution with parameter $B(\frac{k}{2}, \frac{n-k}{2}, I_2)$.
 Using Theorem \ref{thm:mm}, we could write
 $\E[S_{11}^mS_{12}^{2t}] \sim \frac{(2t-1)!!}{2^t} \frac{r^t(1-t)^{t+m}}{n^t} = O(n^{-t})$.
+That is, $\E[S_{11}^mS_{12}^{2t}]$ decreases in the order of $n^{-t}$.
 
 \section{Conclusion}
 We have derived the formula of moments for multivariate Beta distribution
